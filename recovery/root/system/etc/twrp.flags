@@ -16,8 +16,8 @@
 
 # Persistent Firmware & Properties
 /firmware		vfat	/dev/block/bootdevice/by-name/modem									flags=slotselect;display="Firmware";mounttodecrypt;fsflags="ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0"
-/persist		ext4	/dev/block/bootdevice/by-name/persist 								flags=display="Persist";fsflags=ro
-/persist_image	emmc	/dev/block/bootdevice/by-name/persist 								flags=display="Persist";backup=1
+/persist		ext4	/dev/block/bootdevice/by-name/persist								flags=display="Persist";fsflags=ro
+/persist_image	emmc	/dev/block/bootdevice/by-name/persist								flags=display="Persist";backup=1
 
 # Modem partitions
 /modem			emmc	/dev/block/bootdevice/by-name/modem									flags=slotselect;backup=1;display="Modem"
@@ -25,11 +25,11 @@
 /dsp			emmc	/dev/block/bootdevice/by-name/dsp									flags=slotselect;backup=1;subpartitionof=/modem
 
 # EFS partitions
-/efs1			emmc	/dev/block/bootdevice/by-name/modemst1								flags=backup=1;display="EFS"
-/efs2			emmc	/dev/block/bootdevice/by-name/modemst2								flags=backup=1;subpartitionof=/efs1
+/efs1			emmc	/dev/block/bootdevice/by-name/modem_st1								flags=backup=1;display="EFS"
+/efs2			emmc	/dev/block/bootdevice/by-name/modem_st2								flags=backup=1;subpartitionof=/efs1
 /efsc			emmc	/dev/block/bootdevice/by-name/fsc									flags=backup=1;subpartitionof=/efs1
 /efsg			emmc	/dev/block/bootdevice/by-name/fsg									flags=backup=1;subpartitionof=/efs1
 /efsg_CA		emmc	/dev/block/bootdevice/by-name/fsgCA									flags=backup=1;subpartitionof=/efs1
 
 # Removable storage
-/usbstorage		vfat	/dev/block/sdh1									/dev/block/sdh		flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
+/usbstorage		vfat	/dev/block/sdg1										flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
